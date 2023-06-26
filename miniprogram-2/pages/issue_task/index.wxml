@@ -1,0 +1,39 @@
+
+  <view class="header" style="position: relative; left: 264rpx; top: 0rpx">
+     发布打卡任务
+    </view>
+    <view class="details-main">
+        <view class="section section--ext">
+            <view class="section-bd">
+              <view class="pannel">
+                    <view class="pannel-hd">打卡开始时间</view>
+                    <view class="pannel-bd">
+                        <mt-field type="picker" label="选择时间" position="right" hasDivider="{{false}}">
+                            <mt-datepicker
+                                type="time"
+                                bind:confirm="handledate1" />
+                        </mt-field>
+                    </view>
+                </view>
+                <view class="pannel">
+                    <view class="pannel-hd">打卡结束时间</view>
+                    <view class="pannel-bd">
+                        <mt-field type="picker" label="选择时间" position="right" hasDivider="{{false}}">
+                            <mt-datepicker
+                                type="time"
+                                bind:confirm="handledate2" />
+                        </mt-field>
+                    </view>
+                </view>
+                <view class="pannel-hd">打卡地点</view>
+                <view class="pannel-hd">中心点：</view>
+                
+                <map id="myMap"  longitude="102.857696" latitude="24.850259" markers="{{markers}}" show-location bindtap="onMarkerTap"></map>
+                <text style="color:darkslategrey;font-style:italic"> 所选点为：{{address}}</text>
+                <view class="pannel">
+                  <button type="primary" bindtap="submit" style="position: relative; left: -34rpx; top: 40rpx">发布</button>
+                </view>
+            </view>
+        </view>
+	<image src='人.jpg' style="position: relative; left: 144rpx; top: -160rpx; width: 404rpx; height: 578rpx; display: block; box-sizing: border-box; z-index: -1"></image>
+    </view>

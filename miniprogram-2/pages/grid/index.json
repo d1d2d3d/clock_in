@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "mt-grid": "meet-ui-miniapp/grid"
+
+    }
+}

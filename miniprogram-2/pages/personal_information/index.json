@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "校园打卡",
+    "usingComponents": {
+        "mt-field": "meet-ui-miniapp/field",
+        "mt-input": "meet-ui-miniapp/input",
+        "mt-radio": "meet-ui-miniapp/radio",
+        "mt-radio-group": "meet-ui-miniapp/radio-group",
+        "mt-datepicker": "meet-ui-miniapp/datepicker"
+    }
+}

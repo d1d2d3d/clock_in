@@ -1,0 +1,53 @@
+.pannel {
+    background: transparent;
+}
+.cell__rt__image {
+    width: 130rpx;
+    height: 86rpx;
+    border-radius: 8rpx;
+}
+.cell__group {
+    display: block;
+    border-radius: 16rpx;
+    overflow: hidden;
+}
+
+.mt-cell__icon {
+    border-radius: 50%;
+}
+
+.content{
+
+  width: 750 rpx;
+  
+  /* 弹性布局 伸缩 */
+  
+  display: flex;
+  
+  /* 横轴 排列 */
+  
+  flex-direction:column ;
+  
+   /* 数竖直方向 右对齐  */
+  
+  align-items: flex-end;
+  
+  }
+  
+  .content-item{
+  
+    width: 230rpx;
+  
+    height: 150rpx;
+  
+    display: flex;
+  
+    /* 水平方向  */
+  
+    justify-content:center;
+  
+    /* 竖直方向*/
+  
+    align-items: center;
+  
+  }

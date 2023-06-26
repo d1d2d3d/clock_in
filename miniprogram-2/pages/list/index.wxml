@@ -1,0 +1,47 @@
+
+<view class="midtitle" style="color: #e9daec;">
+  <text >打卡情况</text>
+</view>
+<view class="picker-container">
+  <picker mode="selector" range="{{picker}}" bindchange="onPickerChange">
+    <view class="picker">
+      {{selectedItem}}  	
+      <image class="arrow" src="./pulldown.jpg" style="width: 38rpx; height: 34rpx; display: inline-block; box-sizing: border-box; position: absolute;"></image>
+    </view>
+  </picker>
+</view>
+              <view wx:for="{{item}}" wx:for-index="index" wx:if="{{selectedItem =='全部'&&item.identify=='学生'}}"  style="position: relative; left: 0rpx; top: 5rpx">
+              <view class="divLine"></view>
+	      <image src="我的.png"   style="width: 57rpx; height: 44rpx; display: inline-block; box-sizing: border-box; position: relative; left: 0rpx; top: 8rpx">
+        	</image>
+              {{item.name}}\t{{item.account}}
+              <view class="content">
+                <image wx:if="{{item.status==1}}"src="./right.jpg" bindtap="change_clock_status" style="width: 64rpx; height: 44rpx; display: inline-block; box-sizing: border-box; position: relative; left: -34rpx; top: -44rpx" >
+                </image>
+              </view>
+                <view class="content"><image wx:if="{{item.status==0}}" src="./error.jpg" bindtap="change_clock_status" style="width: 64rpx; height: 44rpx; display: inline-block; box-sizing: border-box; position: relative; left: -42rpx; top: -44rpx"
+                ></image> </view>
+                
+              </view>
+              <view wx:for="{{item}}" wx:for-index="index" wx:if="{{selectedItem ==='已打卡'&&item.status==1&&item.identify=='学生'}}" >
+		<image src="我的.png"   style="width: 57rpx; height: 44rpx; display: inline-block; box-sizing: border-box; position: relative; left: 0rpx; top: 8rpx">
+                </image>
+              {{item.name}} \t{{item.account}}
+	      <view class="content">
+                <image wx:if="{{item.status==1}}"src="./right.jpg" bindtap="change_clock_status" style="width: 64rpx; height: 44rpx; display: inline-block; box-sizing: border-box; position: relative; left: -34rpx; top: -44rpx" >
+                </image>
+              </view>
+
+            </view>
+                <view wx:for="{{item}}" wx:for-index="index" wx:if="{{selectedItem ==='未打卡'&&item.status==0&&item.identify=='学生'}}" >
+			<image src="我的.png"   style="width: 57rpx; height: 44rpx; display: inline-block; box-sizing: border-box; position: relative; left: 0rpx; top: 8rpx">
+                </image>
+              {{item.name}} \t{{item.account}}\n
+	      <view class="content">
+                <image wx:if="{{item.status==0}}"src="error.jpg" bindtap="change_clock_status" style="width: 64rpx; height: 44rpx; display: inline-block; box-sizing: border-box; position: relative; left: -34rpx; top: -44rpx" >
+                </image>
+              </view>
+              </view>
+              <view class="divLine"></view>
+
+

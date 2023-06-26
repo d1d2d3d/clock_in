@@ -1,0 +1,64 @@
+<view class="details">
+  <view class="header">
+    注册
+  </view>
+  <view class="main">
+    <view class="form">
+      <mt-field type="input" label="学号/工号" required hasDivider position="right">
+        <mt-input bdColor="null" hasClear="{{false}}" value="{{ID}}" bindinput="handleInput1">
+        </mt-input>
+      </mt-field>
+
+      <mt-field type="input" label="姓名" required hasDivider position="right">
+        <mt-input bdColor="null" hasClear="{{false}}" value="{{name}}" bindinput="handleInput2">
+        </mt-input>
+
+      </mt-field>
+      <mt-field type="input" label="密码" required hasDivider position="right">
+        <mt-input bdColor="null" hasClear="{{false}}" value="{{password}}" bindinput="handleInput3">
+        </mt-input>
+      </mt-field>
+      <mt-field type="radio" label="性别" hasDivider position="right">
+        <mt-radio-group direction="row" items="{{radioList}}" bindchange="handlegender">
+        </mt-radio-group>
+      </mt-field>
+      <mt-field type="radio" label="身份" required hasDivider position="right">
+        <mt-radio-group direction="row" items="{{identifyList}}" bindchange="handleidentify">
+        </mt-radio-group>
+      </mt-field>
+
+      <mt-field type="picker" label="出生日期" hasDivider position="right">
+        <mt-datepicker type="date" placeholder="请选择日期" bindconfirm="handleDate">
+        </mt-datepicker>
+      </mt-field>
+
+      <mt-field type="radio" label="请选择" hasDivider position="right">
+        <mt-radio-group direction="row" items= "{{modeList}}"  
+        bindchange="handlemode">
+        </mt-radio-group>
+      </mt-field>
+
+      <view class='btn'>
+        <button wx:if="{{reshoot == false &&mode==2}}" type="default" bindtap="takePhoto">拍照</button>
+        <button wx:if="{{reshoot == true &&mode==2}}" type="default" bindtap="reTakePhoto">重拍</button>
+      </view>
+    <view>
+        <button wx:if="{{mode==1}}" type="default" bindtap="chooseimage" style="position: relative; left: -156rpx; top: 0rpx"> 从相册中选择图片</button>
+    </view>
+      </view>
+    <view class='camera' wx:if="{{reshoot == false&&mode==2}}">
+      <camera device-position="front" flash="off" binderror="error" style="width: 250px; height: 350px;left: 10rpx;position: relative; left: 100rpx; top: 0rpx"></camera>
+    </view>
+    <view class='preview' wx:if="{{reshoot == true&&mode==2}}">
+      <image mode="widthFix" src="{{src}}" style="width: 100%; height: 350px;"></image>
+    </view>
+    <view class='preview' wx:if="{{mode==1}}">
+      <image mode="widthFix" src="{{src}}" style="width: 100%; height: 350px; position: relative; left: 0rpx; top: 30rpx"></image>
+    </view>
+
+
+    <view class="form__button">
+      <mt-button bindtap="submit" size="l" style="position: relative; left: 0rpx; top: 44rpx">提交</mt-button>
+    </view>
+  </view>
+</view>

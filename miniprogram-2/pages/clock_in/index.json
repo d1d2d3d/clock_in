@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "mt-card": "meet-ui-miniapp/card",
+        "mt-field": "meet-ui-miniapp/field",
+        "mt-input": "meet-ui-miniapp/input",
+        "mt-radio": "meet-ui-miniapp/radio",
+        "mt-radio-group": "meet-ui-miniapp/radio-group",
+        "mt-button": "meet-ui-miniapp/button"
+    }
+}

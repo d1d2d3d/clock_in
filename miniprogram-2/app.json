@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/personal_information/index",
+    "pages/register/index",
+    "pages/grid/index",
+    "pages/issue_task/index",
+    "pages/find_back_password/find_back_password",
+    "pages/clock_in/index",
+    "pages/change_password/index",
+    "pages/list/index"
+  ],
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于获取你的当前位置"
+    }
+  },
+
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#14cf0d",
+    "navigationBarTitleText": "校园打卡",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#0000",
+    "selectedColor": "#14cf0d",
+    "backgroundColor": "#e8e8ee",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/grid/index",
+        "text": "首页",
+        "iconPath": "image/_home.png",
+        "selectedIconPath": "image/home.png"
+      },
+      {
+        "pagePath": "pages/personal_information/index",
+        "text": "我的",
+        "iconPath": "image/_my.png",
+        "selectedIconPath": "image/my.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,49 @@
+<view class="details">
+	<view class="header">
+		个人信息
+	</view>
+	<view class="main">
+		<view class="form">
+			<mt-field type="radio" label="头像" hasDivider position="right" style="position: relative; left: 0rpx; top: 0rpx">
+				<view wx:if="{{tag==false}}">
+					<image src="{{src}}" style="width: 94rpx; height: 98rpx" bindtap="chooseimage"></image>
+				</view>
+
+				<view wx:if="{{tag==true}}">
+					<image src="{{src}}" style="width: 94rpx; height: 98rpx" bindtap="chooseimage"></image>
+				</view>
+			</mt-field>
+			<mt-field type="input" label="学号/工号" position="right">
+				<text>{{account}}</text>
+			</mt-field>
+
+			<mt-field type="input" label="姓名" position="right">
+				<mt-input wx:if="{{tag==true}}" bdColor="null" hasClear="{{false}}" value="{{name}}" bindinput="handleInput2">
+				</mt-input>
+				<text wx:if="{{tag==false}}">{{name}}</text>
+			</mt-field>
+			<mt-field type="radio" label="性别" hasDivider position="right">
+				<mt-radio-group wx:if="{{tag==true}}" direction="row" items="{{radioList}}" bindchange="handlegender">
+				</mt-radio-group>
+				<text wx:if="{{tag==false}}">{{gender}}</text>
+			</mt-field>
+			<mt-field type="radio" label="身份" position="right">
+				<text>{{identify}}</text>
+			</mt-field>
+
+			<mt-field type="picker" label="出生日期" hasDivider position="right">
+				<mt-datepicker wx:if="{{tag==true}}" type="date" placeholder="请选择日期" bindconfirm="handleDate">
+				</mt-datepicker>
+				<text wx:if="{{tag==false}}">{{birthday}}</text>
+			</mt-field>
+
+
+		</view>
+		<view wx:if="{{tag==false}}">
+			<button class="btn" disabled="{{disabled}}" type="{{btnstate}}" bindtap="change" style="position: relative; left: -208rpx; top: 0rpx">修改个人信息</button>
+		</view>
+		<view wx:if="{{tag==true}}">
+			<button class="btn" disabled="{{disabled}}" type="{{btnstate}}" bindtap="submit">确定</button>
+		</view>
+	</view>
+</view>

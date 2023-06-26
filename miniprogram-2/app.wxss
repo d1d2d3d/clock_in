@@ -1,0 +1,31 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.header {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    font-style: italic;
+  }
+  .midtitle{
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+  }
+/*分割线样式*/
+.divLine{
+  background: #E0E3DA;
+  width: 100%;
+  height: 5rpx;
+ }

@@ -1,0 +1,64 @@
+<view class="details">
+    <view class="details-header">
+        <mt-cell title="{{compTitle}}">
+            <mt-icon slot="left" type="custom" name="功能" size="64" class="component-icon"></mt-icon>
+        </mt-cell>
+    </view>
+    <view >
+    <image  wx:if="{{identify==='学生'}}" src='个人信息.png'  bindtap="goto_information" style="width: 66rpx; height: 44rpx; display: inline-block; box-sizing: border-box; position: relative; left: 343rpx; top: 426rpx"></image>
+    <image  wx:if="{{identify==='教师'}}" src='个人信息.png'  bindtap="goto_information" style="width: 66rpx; height: 44rpx; display: inline-block; box-sizing: border-box; position: relative; left: 196rpx; top: 416rpx"></image>
+    </view>
+
+    <view class="details-main" wx:if="{{identify==='学生'}}">
+                <view class="pannel">
+                    <view class="pannel-hd">日常管理</view>
+                    <view class="pannel-bd">
+                        <mt-grid
+                            items="{{student_1}}"
+                            column="4"
+                            iconRadius="32">
+                        </mt-grid>
+                    </view>
+                </view>
+                <!-- 分割线 -->
+                <view class="divLine"></view>
+                <view class="pannel">
+                    <view class="pannel-hd">个人设置</view>
+                    <view class="pannel-bd">
+                        <mt-grid
+                            items="{{student_2}}"
+                            column="5"
+                            iconWidth="60"
+                            iconHeight="60"
+                            iconRadius="32"
+                            titleSize="30"></mt-grid>
+                    </view>
+                </view>
+    </view>
+    <view class="details-main" wx:if="{{identify ==='教师'}}">
+                <view class="pannel">
+                    <view class="pannel-hd">日常管理</view>
+                    <view class="pannel-bd">
+                        <mt-grid
+                            items="{{teacher_1}}"
+                            column="4"
+                            iconRadius="32">
+                        </mt-grid>
+                    </view>
+                </view>
+                <!-- 分割线 -->
+                <view class="divLine"></view>
+                <view class="pannel">
+                    <view class="pannel-hd">个人设置</view>
+                    <view class="pannel-bd">
+                        <mt-grid
+                            items="{{teacher_2}}"
+                            column="5"
+                            iconWidth="60"
+                            iconHeight="60"
+                            iconRadius="32"
+                            titleSize="30"></mt-grid>
+                    </view>
+                </view>
+    </view>
+</view>

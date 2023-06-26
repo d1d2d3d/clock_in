@@ -1,0 +1,29 @@
+<!--pages/login/login.wxml-->
+<view class="topback" style="position: relative; ">
+<image class='bg' src='../../image/my-bg.jpg'  style="position: relative; "></image>
+<view class="midtitle" 
+      style="position: relative; left: -22rpx; top: -192rpx; color:black; font-weight: bold;">
+      登录</view>
+</view>
+<view class="content">
+	<view class="account">
+		<view class="title">帐号</view>
+		<view class="num"><input bindinput="accountInput" placeholder="学号/工号" placeholder-style="color:#999;" /></view>
+	</view>
+	<view class="hr"></view>
+	<view class="account">
+		<view class="title">密码</view>
+		<view class="num"><input bindinput="pwdBlur" placeholder="请输入密码" password="{{visibility}}" placeholder-style="color:#999;" /></view>
+		<view class="see">
+			<image style="width: 104rpx; height: 54rpx; display: inline-block; box-sizing: border-box; position: relative; left: 29rpx; top: 0rpx" src="/./image/see.jpg"  bindtap="visible">
+    jpgstyle="width:42px; height:30px;" /></image>
+		</view>
+	</view>
+	<view class="hr"></view>
+
+	<button class="btn" disabled="{{disabled}}" type="{{btnstate}}"  bindtap="login" style="position: relative; left: 1rpx; top: 0rpx">登录</button>
+	<view class="operate">
+		<view><navigator url= "../register/index" >用户注册</navigator></view>
+   	<view><navigator url= "../find_back_password/find_back_password" >找回密码</navigator></view>
+    </view>
+	</view>

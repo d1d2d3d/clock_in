@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "mt-input": "meet-ui-miniapp/input"
+        
+    }
+}

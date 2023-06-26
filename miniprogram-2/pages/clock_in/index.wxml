@@ -1,0 +1,66 @@
+<view class="details" style="width: 750rpx; height: 1126rpx; display: block; box-sizing: border-box">
+  <view class="header" style="position: relative; left: 340rpx; top: 0rpx">
+    打卡
+  </view>
+
+  <view class="details-main">
+    <view class="section">
+      <view class="section-hd">
+        <view class="section-hd__text" style="position: relative; left: 29rpx; top: 0rpx">定位</view>
+        <text class="section-hd__icon"></text>
+      </view>
+      <view class="section-bd">
+        <view class="pannel">
+          <button type="primary" bindtap="getLocation" style="position: relative; left: -183rpx; top: 0rpx">获取位置</button>
+          <map id="myMap" longitude="{{longitude}}" latitude="{{latitude}}" show-location style="width: 230rpx; height: 200rpx; display: block; box-sizing: border-box; left: 8rpx; top: 0rpx; position: relative"></map>
+          <view class="pannel-bd" style="position: relative; left: 8rpx; top: -1rpx">
+            <mt-card image="" imageWidth="135" imageHeight="135" title="位置" desc="{{address}}" style="position: relative; left: 226rpx; top: -200rpx">
+            </mt-card>
+          </view>
+          
+        </view>
+      </view>
+
+      <view class="main">
+        <view class="form">
+          <mt-field type="input" label="学号/工号" required hasDivider position="right" style="position: relative; left: 35rpx; top: -148rpx">
+            <mt-input bdColor="null" hasClear="{{false}}" value="{{account}}" bindinput="handleInput1">
+            </mt-input>
+          </mt-field>
+
+          <mt-field type="radio" label="请选择" hasDivider position="right" style="position: relative; left: 35rpx; top: -148rpx">
+            <mt-radio-group direction="row" items="{{modeList}}" bindchange="handlemode">
+            </mt-radio-group>
+          </mt-field>
+
+          <view class='btn'>
+            <button wx:if="{{reshoot == false &&mode==2}}" type="default" bindtap="takePhoto">拍照</button>
+
+            <button wx:if="{{reshoot == true &&mode==2}}" type="default" bindtap="reTakePhoto">重拍</button>
+          </view>
+
+          <button wx:if="{{mode==1}}" type="default" bindtap="chooseimage" style="position: relative; left: -156rpx; top: -149rpx">从相册中选择图片</button>
+
+
+          <view class='camera' wx:if="{{reshoot == false&&mode==2}}">
+            <camera device-position="front" flash="off" binderror="error" style="width: 250px; height: 350px;"></camera>
+          </view>
+          <view class='preview' wx:if="{{reshoot == true&&mode==2}}">
+            <image mode="widthFix" src="{{src}}" style="width: 100%; height: 350px;"></image>
+          </view>
+          <view class='preview' wx:if="{{mode==1}}">
+            <image mode="widthFix" src="{{src}}" style="width: 662rpx; height: 662rpx; display: inline-block; box-sizing: border-box; left: 44rpx; top: 0rpx; position: relative"></image>
+          </view>
+
+
+          <view class="form__button" style="width: 750rpx; height: 122rpx; display: block; box-sizing: border-box">
+            <mt-button wx:if="{{mark==false}}" bindtap="submit" size="l" style="position: relative; left: 0rpx; top: 44rpx">打卡</mt-button>
+
+            <mt-button wx:if="{{mark==true}}" bindtap="" size="l" style="position: relative; left: 0rpx; top: 44rpx">已打卡
+            </mt-button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
